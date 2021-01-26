@@ -1,4 +1,4 @@
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import logo from '../assets/static/logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -22,7 +22,13 @@ const NavBar = () => {
       >
         <Nav>
           <Nav.Link href='#home'>Home</Nav.Link>
-          <Nav.Link href='#market'>Market</Nav.Link>
+          <NavDropdown title='Market' id='collasible-nav-dropdown'>
+            <NavDropdown.Item href='#market/2.1'>Cervezas</NavDropdown.Item>
+            <NavDropdown.Item href='#market/2.2'>Combos</NavDropdown.Item>
+            <NavDropdown.Item href='#market/2.3'>
+              Merchandising
+            </NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link href='#nosotros'>Nosotros</Nav.Link>
           <Nav.Link href='#contacto'>Contacto</Nav.Link>
         </Nav>
