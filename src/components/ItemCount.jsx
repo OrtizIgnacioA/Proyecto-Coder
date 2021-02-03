@@ -1,6 +1,6 @@
 import { Button, ButtonGroup } from 'react-bootstrap';
 
-export const ItemCount = ({ stock, count, onSubtract, onAdd }) => {
+export const ItemCount = ({ stock, count, onSubtract, onAdd, onBuy }) => {
   return (
     <>
       <ButtonGroup aria-label='Basic example'>
@@ -18,7 +18,7 @@ export const ItemCount = ({ stock, count, onSubtract, onAdd }) => {
           <Button variant='warning'>Solo hasta 6 Productos</Button>
         )}
       </ButtonGroup>
-      <Button>Comprar</Button>
+      <Button onClick={onBuy}>Comprar</Button>
     </>
   );
 };

@@ -19,6 +19,10 @@ const ItemListContainer = ({ greeting }) => {
     }
   };
 
+  const onBuy = () => {
+    alert(`Su compra de ${count} cervezas fue exitosa`);
+  };
+
   return (
     <>
       <a className='h1 row justify-content-center'>{greeting}</a>
@@ -27,6 +31,7 @@ const ItemListContainer = ({ greeting }) => {
         count={count}
         onSubtract={onSubtract}
         onAdd={onAdd}
+        onBuy={onBuy}
       />
     </>
   );
