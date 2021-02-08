@@ -1,5 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ItemCount } from '../components/ItemCount';
+import ItemList from '../components/ItemList';
+import productList from '../mocks/productList';
+import { Spinner } from 'react-bootstrap';
 
 const ItemListContainer = ({ greeting }) => {
   const [count, setCount] = useState(1);
@@ -23,6 +26,34 @@ const ItemListContainer = ({ greeting }) => {
     alert(`Su compra de ${count} cervezas fue exitosa`);
   };
 
+  /* ---------------------------------- */
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(productList);
+      }, 3000);
+    });
+
+    myPromise.then((result) => {
+      setProducts(result);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Spinner animation='border' role='status'>
+        <span className='sr-only'>Loading...</span>
+      </Spinner>
+    );
+  }
+
+  /* ---------------------------------- */
+
   return (
     <>
       <a className='h1 row justify-content-center'>{greeting}</a>
@@ -33,6 +64,7 @@ const ItemListContainer = ({ greeting }) => {
         onAdd={onAdd}
         onBuy={onBuy}
       />
+      <ItemList products={products} />
     </>
   );
 };
