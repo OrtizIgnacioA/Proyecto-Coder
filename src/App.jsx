@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,12 +11,15 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route exact path='/'>
-          <ItemListContainer greeting={'PROXIMAMENTE CATALOGO'} />
+        <Route exact path='/'></Route>
+        <Route exact path='/market/cervezas'>
+          <ItemListContainer />
         </Route>
-        <Route exact path='/productos'>
+        <Route exact path='/market/cervezas/detalle'>
           <ItemDetailContainer />
         </Route>
+        <Route exact path='/nosotros'></Route>
+        <Route exact path='/contacto'></Route>
         {/* <Route component={NotFound} /> */}
       </Switch>
     </BrowserRouter>

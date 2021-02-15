@@ -1,16 +1,24 @@
-import { Card } from 'react-bootstrap';
+import { Card, Button, CardGroup } from 'react-bootstrap';
+import '../assets/styles/components/Item.scss';
+import { Link } from 'react-router-dom';
 
 const Item = ({ product }) => {
   return (
     <>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant='top' src={product.images} />
-        <Card.Body>
-          <Card.Title>{product.name}</Card.Title>
-          <Card.Text>{product.description}</Card.Text>
-          <Card.Text>${product.price}</Card.Text>
-        </Card.Body>
-      </Card>
+      <CardGroup className='cardGroup'>
+        <Card className='cards'>
+          <Card.Img variant='top' src={product.images} />
+          <Card.Body>
+            <Card.Title>{product.name}</Card.Title>
+            <Card.Text className='price'>${product.price}</Card.Text>
+            <Link to={'/market/cervezas/detalle'}>
+              <Button className='button' variant='primary'>
+                Ver Detalle
+              </Button>
+            </Link>
+          </Card.Body>
+        </Card>
+      </CardGroup>
     </>
   );
 };

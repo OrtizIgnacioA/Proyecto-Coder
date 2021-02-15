@@ -1,9 +1,10 @@
 import { Card } from 'react-bootstrap';
+import '../assets/styles/components/ItemDetail.scss';
 
 const ItemDetail = ({ items }) => {
   return (
     <>
-      <Card style={{ width: '50rem' }}>
+      <Card className='cardDetail'>
         <Card.Img variant='top' src={items.images} />
         <Card.Body>
           <Card.Title>{items.name}</Card.Title>

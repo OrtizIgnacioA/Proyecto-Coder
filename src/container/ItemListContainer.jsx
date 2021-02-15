@@ -4,7 +4,7 @@ import ItemList from '../components/ItemList';
 import productList from '../mocks/productList';
 import { Spinner } from 'react-bootstrap';
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [count, setCount] = useState(1);
 
   const onAdd = (stock) => {
@@ -56,14 +56,13 @@ const ItemListContainer = ({ greeting }) => {
 
   return (
     <>
-      <a className='h1 row justify-content-center'>{greeting}</a>
-      <ItemCount
+      {/*       <ItemCount
         stock={6}
         count={count}
         onSubtract={onSubtract}
         onAdd={onAdd}
         onBuy={onBuy}
-      />
+      /> */}
       <ItemList products={products} />
     </>
   );
