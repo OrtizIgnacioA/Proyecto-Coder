@@ -11,11 +11,13 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route exact path='/'></Route>
+        <Route exact path='/'>
+          <ItemListContainer />
+        </Route>
         <Route exact path='/market/cervezas'>
           <ItemListContainer />
         </Route>
-        <Route exact path='/market/cervezas/detalle'>
+        <Route exact path='/cervezas/negra/detalle'>
           <ItemDetailContainer />
         </Route>
         <Route exact path='/nosotros'></Route>

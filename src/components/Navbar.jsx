@@ -34,15 +34,15 @@ const NavBar = () => {
                 Home
               </Link>
             </Nav.Link>
-            <NavDropdown title='Market' id='collasible-nav-dropdown'>
+            <NavDropdown title='Cervezas' id='collasible-nav-dropdown'>
               <NavDropdown.Item>
-                <Link to={'/market/cervezas'}>Cervezas</Link>
+                <Link to={'/cervezas/negra/detalle'}>Negra</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={'/market/combos'}>Combos</Link>
+                <Link to={'/cervezas/rubia/detalle'}>Rubia</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <Link to={'/market/merchandising'}>Merchandising</Link>
+                <Link to={'/cervezas/rojas/detalle'}>Roja</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link>
