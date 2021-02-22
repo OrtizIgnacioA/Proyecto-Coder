@@ -14,10 +14,10 @@ const App = () => {
         <Route exact path='/'>
           <ItemListContainer />
         </Route>
-        <Route exact path='/market/cervezas'>
+        <Route exact path='/cervezas'>
           <ItemListContainer />
         </Route>
-        <Route exact path='/cervezas/negra/detalle'>
+        <Route exact path='/cervezas/:id'>
           <ItemDetailContainer />
         </Route>
         <Route exact path='/nosotros'></Route>

@@ -34,17 +34,27 @@ const NavBar = () => {
                 Home
               </Link>
             </Nav.Link>
-            <NavDropdown title='Cervezas' id='collasible-nav-dropdown'>
-              <NavDropdown.Item>
-                <Link to={'/cervezas/negra/detalle'}>Negra</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to={'/cervezas/rubia/detalle'}>Rubia</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to={'/cervezas/rojas/detalle'}>Roja</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link>
+              <Link
+                to={'/cervezas'}
+                style={{ color: 'inherit', textDecoration: 'inherit' }}
+              >
+                Cervezas
+              </Link>
+            </Nav.Link>
+            {/*             <Link to={'/cervezas'}>
+              <NavDropdown title='Cervezas' id='collasible-nav-dropdown'>
+                <NavDropdown.Item>
+                  <Link to={'/cervezas/negra/detalle'}>Negra</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to={'/cervezas/rubia/detalle'}>Rubia</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to={'/cervezas/rojas/detalle'}>Roja</Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Link> */}
             <Nav.Link>
               <Link
                 to={'/nosotros'}
