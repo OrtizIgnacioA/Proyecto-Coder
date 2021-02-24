@@ -1,12 +1,15 @@
 import { Card, Button } from 'react-bootstrap';
 import '../assets/styles/components/ItemDetail.scss';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { ItemCount } from './ItemCount';
 import { Link } from 'react-router-dom';
+import { cartContext } from '../context/CartContext';
 
 const ItemDetail = ({ items }) => {
   const [count, setCount] = useState(1);
   const [irCart, setIrCart] = useState(false);
+
+  const { addCart, product, quantity } = useContext(cartContext);
 
   const onAdd = (stock) => {
     console.log(stock);
@@ -26,7 +29,11 @@ const ItemDetail = ({ items }) => {
   const onBuy = () => {
     alert(`Su compra de ${count} cervezas fue exitosa`);
     setIrCart(true);
+    addCart({ items: items, quantity: count });
   };
+
+  console.log([product]);
+  console.log(quantity);
 
   return (
     <>
